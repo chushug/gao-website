@@ -171,7 +171,7 @@ body {
 /* ── Sidebar footer ──────────────────────────────── */
 .sidebar-footer { margin-top: auto; padding-top: 1rem; }
 
-.sidebar-footer p { color: #4a3650; font-size: 0.72rem; margin: 0; }
+.sidebar-footer p { color: #9e8eaa; font-size: 0.72rem; margin: 0; }
 
 /* ── Main content — centered in remaining space ─── */
 #quarto-content {
