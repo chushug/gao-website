@@ -19,8 +19,10 @@ jobs:
       - name: Render site
         run: quarto render
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+      - name: Commit rendered docs to main
+        run: |
+          git config user.email "github-actions@github.com"
+          git config user.name "GitHub Actions"
+          git add docs/
+          git diff --staged --quiet || git commit -m "chore: render site [skip ci]"
+          git push
