@@ -15,7 +15,7 @@
 /* ── Page background with subtle gradient for glass effect ── */
 body {
   margin: 0;
-  background: linear-gradient(135deg, #f2eef7 0%, #edf5f1 55%, #f5efee 100%);
+  background: linear-gradient(135deg, #e8e0f2 0%, #dff0e8 55%, #f0e5e2 100%);
   background-attachment: fixed;
   font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 17px;
@@ -136,7 +136,7 @@ body {
 
 .sidebar-nav ul li a {
   display: block;
-  color: #bbaec6;
+  color: #ddd4e8;
   text-decoration: none;
   padding: 0.55rem 0;
   font-size: 0.93rem;
@@ -160,7 +160,7 @@ body {
 }
 
 .social-icons a {
-  color: var(--c-purple);
+  color: #c4b4d4;
   font-size: 1.2rem;
   text-decoration: none;
   transition: color 0.2s;
