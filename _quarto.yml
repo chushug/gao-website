@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Chushu (Maxon) Gao"
+  site-url: https://chushug.github.io/gao-website
+  description: "PhD Student in Biology, Saint Louis University"
+
+format:
+  html:
+    theme: flatly
+    css: styles.css
+    toc: false
+    page-layout: full
+    include-in-header: _head.html
+    include-before-body: _sidebar.html

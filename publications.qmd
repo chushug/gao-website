@@ -1,0 +1,19 @@
+---
+title: "Publications"
+---
+
+### 2026
+
+::: paper
+::: paper-title
+First Metagenome-Assembled Genomes from the Historic Morrow Plots Reveal Management-Associated Dominance of Archaeal Ammonia Oxidizers
+:::
+::: paper-authors
+Viet D. Nguyen, **Chushu Gao**, Cory Gardner, Zhine Wang, Andrew J. Margenot, Laibin Huang, TaeHyuk Ahn
+:::
+::: paper-journal
+*Scientific Data* · under review
+:::
+<a href="https://doi.org/10.64898/2026.03.24.714042" class="paper-badge" target="_blank"><i class="ai ai-biorxiv"></i> bioRxiv</a>
+<a href="https://doi.org/10.64898/2026.03.24.714042" class="paper-badge" target="_blank"><i class="fa-solid fa-link"></i> DOI</a>
+:::

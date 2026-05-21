@@ -1,0 +1,54 @@
+---
+title: "Research"
+---
+
+My work sits at the intersection of soil microbial ecology, biogeochemical cycling, and long-term agricultural management. I use a combination of sequencing-based approaches and wet-lab methods to understand how microbial communities drive nitrogen transformations in soil.
+
+---
+
+::: research-grid
+
+::: research-card
+![Morrow Plots aerial view](images/research-morrow.jpg){onerror="this.style.display='none'"}
+::: research-card-body
+### Nitrogen Cycling in the Morrow Plots
+
+How does more than a century of crop rotation and fertilization reshape the soil microbiomes that drive nitrification and N~2~ fixation?
+
+[Read more](research_morrow.html){.btn-more}
+:::
+:::
+
+::: research-card
+![Rice paddy field](images/research-diazo.jpg){onerror="this.style.display='none'"}
+::: research-card-body
+### Diazotrophic Community Ecology
+
+Straw supplementation with reduced chemical fertilizer shifts diazotrophic community structure in double-rice paddies — what soil fertility properties drive those shifts?
+
+[Read more](research_diazo.html){.btn-more}
+:::
+:::
+
+::: research-card
+![Bird in mangrove](images/research-biodiv.jpg){onerror="this.style.display='none'"}
+::: research-card-body
+### Biodiversity & Field Ecology
+
+Camera trap monitoring in mangrove reserves, avian biodiversity baseline surveys across 40 grid cells, and long-term citizen-science bird monitoring.
+
+[Read more](research_biodiv.html){.btn-more}
+:::
+:::
+
+:::
+
+---
+
+## Methods I Use
+
+**Molecular:** DNA/RNA extraction, 16S & nifH amplicon sequencing, metagenomics, metatranscriptomics, qPCR, functional gene cloning
+
+**Statistical:** R (vegan, phyloseq, ALDEx2), PCoA, NMDS, RDA, PERMANOVA, differential abundance analysis
+
+**Field:** Soil sampling, gas flux measurement, camera trap deployment, point count bird surveys, acoustic recording

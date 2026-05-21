@@ -1,0 +1,115 @@
+---
+title: "CV"
+---
+
+[<i class="fa-solid fa-file-pdf"></i> Download PDF](pdf/Maxon_Gao_CV.pdf){.btn-cv target="_blank"}
+
+---
+
+## Education
+
+::: cv-entry
+**Saint Louis University** · PhD, Biology · *Advisor: Dr. Laibin Huang*
+[Aug 2025 – Expected May 2030]{.cv-date}
+:::
+GPA: 3.57/4.00
+
+::: cv-entry
+**Guangxi University** · BSc, Ecology
+[Aug 2021 – May 2025]{.cv-date}
+:::
+GPA: 3.47/5 · Rank: top 3%
+
+---
+
+## Publications
+
+See [Publications](publications.html).
+
+---
+
+## Research Experience
+
+::: cv-entry
+**Doctoral Researcher**, Huang Lab, Saint Louis University
+[Aug 2025 – present]{.cv-date}
+:::
+Dissertation on nitrogen cycling in the Morrow Plots. Metagenomics, metatranscriptomics, 16S/nifH amplicon sequencing, qPCR, functional gene cloning.
+
+::: cv-entry
+**Lead Author**, Wang Lab, Guangxi University
+[Sep 2022 – Jun 2025]{.cv-date}
+:::
+Effects of straw supplementation with reduced chemical fertilizer on diazotrophic communities in double-rice fields. Supported by the National Natural Science Foundation of China.
+
+::: cv-entry
+**Soil & Microbial Ecology Laboratory Technician**, Wang Lab
+[Mar 2022 – Nov 2023]{.cv-date}
+:::
+Soil sampling, sample preparation, soil fertility assays (pH, TN, TP, TK, DOC, MBC, MBN, NH~4~^+^, NO~3~^-^).
+
+::: cv-entry
+**Camera Trap Field Technician**, Jiang Lab — Guangxi Shankou Mangrove Reserve
+[Nov 2023 – Jun 2025]{.cv-date}
+:::
+Deployed and maintained 20 camera traps; organized species identification and behavioral data.
+
+::: cv-entry
+**Biodiversity Baseline Survey Technician (Avian)**
+[Jan 2024, Jul 2024]{.cv-date}
+:::
+Surveyed 40 grid cells (10×10 km) in Yiling District using direct count, thermography, and acoustic recording.
+
+::: cv-entry
+**Bird Monitoring Technician & Citizen Science Coordinator**, Luo Lab
+[Sep 2023 – Jun 2025]{.cv-date}
+:::
+Twice-monthly surveys at four sites; recorded >120 species; organized public science events for 40+ attendees.
+
+---
+
+## Teaching Experience
+
+::: cv-entry
+**Teaching Assistant**, BIOL 1265, Saint Louis University
+[Jan – May 2026]{.cv-date}
+:::
+
+::: cv-entry
+**Teaching Assistant**, BIOL 1245, Saint Louis University
+[Aug – Dec 2025]{.cv-date}
+:::
+
+---
+
+## Awards
+
+::: cv-entry
+Third Prize, "Focus on Green Development" Ecological Science Popularization Contest · *National*
+[2024]{.cv-date}
+:::
+
+::: cv-entry
+Second Prize, National College Student English Competition · *National*
+[2022]{.cv-date}
+:::
+
+::: cv-entry
+Excellent Student Cadre (×2); Merit Student (×2); Excellent Staff (×2) · *School level*
+[2021–2023]{.cv-date}
+:::
+
+::: cv-entry
+Stora Enso Scholarship
+[2022]{.cv-date}
+:::
+
+---
+
+## Internship
+
+::: cv-entry
+**Yiling District Branch, Yichang Ecological Environment Bureau**
+[Aug 2023]{.cv-date}
+:::
+Natural resource survey of Quanyi River National Wetland Park; pollution inspections; drone survey of national control river sections; water sample collection and chemical analysis.

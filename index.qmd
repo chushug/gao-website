@@ -1,0 +1,50 @@
+---
+title: "Home"
+---
+
+## About
+
+I am a PhD student in the Department of Biology at **Saint Louis University**, advised by [Dr. Laibin Huang](https://huanglabslu.com). My research focuses on nitrogen cycling in long-term agricultural ecosystems — specifically, how a century of differential crop rotation and fertilization has shaped soil microbial communities and nitrification-related processes in the **Morrow Plots**, the oldest continuously cultivated experimental field in the Americas.
+
+I work with metagenomics, metatranscriptomics, and 16S/nifH amplicon sequencing to characterize the functional potential and transcriptional activity of soil microbiomes. Before coming to SLU, I completed a bachelor's degree in Ecology at **Guangxi University** (China), where I studied diazotrophic communities in double-rice paddies.
+
+Outside the lab, I am an enthusiastic birder and have contributed to camera trap monitoring in mangrove reserves and avian biodiversity baseline surveys in southern China.
+
+---
+
+## News
+
+::: news-item
+::: news-date
+May 2026
+:::
+New preprint posted: *First Metagenome-Assembled Genomes from the Historic Morrow Plots Reveal Management-Associated Dominance of Archaeal Ammonia Oxidizers.* [bioRxiv 2026.03.24.714042](https://doi.org/10.64898/2026.03.24.714042)
+:::
+
+::: news-item
+::: news-date
+April 2026
+:::
+Served as a judge at the **Biology Undergraduate Research Symposium** at Saint Louis University, evaluating biology and neuroscience posters.
+:::
+
+::: news-item
+::: news-date
+January 2026
+:::
+Served as a judge at the **Adams Elementary STEAM Fair**. Started TA appointment for BIOL 1265 (Evolution, Ecology, and Diversity).
+:::
+
+::: news-item
+::: news-date
+August 2025
+:::
+Started PhD program in Biology at **Saint Louis University**.
+:::
+
+::: news-item
+::: news-date
+May 2025
+:::
+Graduated with a BSc in Ecology from **Guangxi University** (GPA rank: top 3%).
+:::
