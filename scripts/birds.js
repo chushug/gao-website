@@ -1,87 +1,107 @@
 (function () {
-  const canvas = document.createElement('canvas');
-  canvas.style.cssText = [
-    'position:fixed', 'inset:0', 'width:100%', 'height:100%',
-    'z-index:0', 'pointer-events:none'
-  ].join(';');
+  // Only run on the home page
+  var path = window.location.pathname;
+  var isHome = /\/(index\.html)?$/.test(path) || path.endsWith('/gao-website/');
+  if (!isHome) return;
+
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;';
   document.body.insertBefore(canvas, document.body.firstChild);
+  var ctx = canvas.getContext('2d');
 
-  const ctx = canvas.getContext('2d');
-
-  function resize() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
   resize();
   window.addEventListener('resize', resize);
 
-  /* ── Bird ─────────────────────────────────────────── */
+  /* ── Draw one bird silhouette ────────────────────
+   * Bird faces RIGHT. Wings extend along ±Y axis.
+   * delta = -sin(phase)*amp: both tips shift same direction
+   * (upstroke = negative delta = tips go toward -Y = screen top)
+   * ─────────────────────────────────────────────── */
+  function drawBird(c, phase, size) {
+    var s = Math.sin(phase);
+    var d = -s * 17;          // vertical tip offset (both wings)
+    var S = 20;               // base half-span
+    var color = 'rgba(31,13,30,0.50)';
+
+    // Wing tip positions
+    var t1y = -S + d;         // top wing tip Y
+    var t2y =  S + d;         // bottom wing tip Y
+    var tx  = -13;            // wing tip X (behind body)
+
+    c.fillStyle = color;
+
+    // ── Top wing ──────────────────────────────────
+    // Leading edge sweeps forward then out to tip;
+    // trailing edge angles directly back.
+    c.beginPath();
+    c.moveTo(5, -2);                                      // root
+    c.bezierCurveTo(2, d*0.15-8,  tx+5, t1y+6,  tx, t1y); // leading edge
+    c.bezierCurveTo(tx-4, t1y+2,  tx-5, t1y+5,  tx-3, t1y+7); // tip rounding
+    c.bezierCurveTo(tx+2, t1y+9,  -1, d*0.1+1,  5, 3);   // trailing edge
+    c.closePath();
+    c.fill();
+
+    // ── Bottom wing (Y-mirror of top) ─────────────
+    c.beginPath();
+    c.moveTo(5, 2);
+    c.bezierCurveTo(2, d*0.15+8,  tx+5, t2y-6,  tx, t2y);
+    c.bezierCurveTo(tx-4, t2y-2,  tx-5, t2y-5,  tx-3, t2y-7);
+    c.bezierCurveTo(tx+2, t2y-9,  -1, d*0.1-1,  5, -3);
+    c.closePath();
+    c.fill();
+
+    // ── Body ──────────────────────────────────────
+    c.beginPath();
+    c.moveTo(13, 0);                          // beak tip
+    c.bezierCurveTo(10, -3, 2, -3, -6, -2);  // top of body
+    c.bezierCurveTo(-11, -1, -11, 1, -6, 2); // tail curve
+    c.bezierCurveTo(2, 3, 10, 3, 13, 0);     // bottom of body
+    c.closePath();
+    c.fill();
+
+    // ── Tail fan ──────────────────────────────────
+    c.beginPath();
+    c.moveTo(-6, 0);
+    c.bezierCurveTo(-9, -3, -16, -2, -15, 0.5);
+    c.bezierCurveTo(-16,  3, -9,  3, -6,  1);
+    c.closePath();
+    c.fill();
+  }
+
+  /* ── Bird instance ───────────────────────────── */
   function Bird() { this.reset(true); }
 
   Bird.prototype.reset = function (scatter) {
-    const W = canvas.width, H = canvas.height;
-    this.x      = scatter ? Math.random() * W : -70;
-    this.y      = 60 + Math.random() * H * 0.65;
-    this.speed  = 0.45 + Math.random() * 0.85;
-    this.scale  = 0.35 + Math.random() * 0.75;
-    this.wing   = Math.random() * Math.PI * 2;        // current wing phase
-    this.wSpd   = 0.038 + Math.random() * 0.028;      // flap speed
-    this.dip    = Math.random() * Math.PI * 2;         // vertical drift phase
-    this.dipSpd = 0.006 + Math.random() * 0.006;
-    this.dipAmp = 0.25 + Math.random() * 0.45;
+    var H = canvas.height;
+    this.x     = scatter ? Math.random() * canvas.width : -80;
+    this.y     = 70 + Math.random() * H * 0.60;
+    this.speed = 0.5 + Math.random() * 0.9;
+    this.size  = 0.38 + Math.random() * 0.70;
+    this.phase = Math.random() * Math.PI * 2;
+    this.flapSpd = 0.036 + Math.random() * 0.030;
+    this.dip   = Math.random() * Math.PI * 2;
+    this.dipSpd = 0.006 + Math.random() * 0.005;
+    this.dipAmp = 0.20 + Math.random() * 0.40;
   };
 
   Bird.prototype.update = function () {
-    this.x    += this.speed;
-    this.wing += this.wSpd;
-    this.dip  += this.dipSpd;
-    this.y    += Math.sin(this.dip) * this.dipAmp * 0.25;
-    if (this.x > canvas.width + 80) this.reset(false);
+    this.x     += this.speed;
+    this.phase += this.flapSpd;
+    this.dip   += this.dipSpd;
+    this.y     += Math.sin(this.dip) * this.dipAmp * 0.3;
+    if (this.x > canvas.width + 90) this.reset(false);
   };
 
   Bird.prototype.draw = function (c) {
-    const wp = Math.sin(this.wing);   // -1 to 1, wing position
-    const wy = wp * -15;              // wing-tip Y offset
-
     c.save();
     c.translate(this.x, this.y);
-    c.scale(this.scale, this.scale);
-    c.fillStyle = 'rgba(31,13,30,0.30)';
-
-    // Body
-    c.beginPath();
-    c.ellipse(0, 0, 7, 2.5, 0, 0, Math.PI * 2);
-    c.fill();
-
-    // Left wing
-    c.beginPath();
-    c.moveTo(-3, 0);
-    c.bezierCurveTo(-10, wy * 0.6, -20, wy, -24, wy * 0.35);
-    c.bezierCurveTo(-20, wy * 0.55, -10, wy * 0.15, -3, 2.5);
-    c.closePath();
-    c.fill();
-
-    // Right wing
-    c.beginPath();
-    c.moveTo(3, 0);
-    c.bezierCurveTo(10, wy * 0.6, 20, wy, 24, wy * 0.35);
-    c.bezierCurveTo(20, wy * 0.55, 10, wy * 0.15, 3, 2.5);
-    c.closePath();
-    c.fill();
-
-    // Tail
-    c.beginPath();
-    c.moveTo(-5, 0.5);
-    c.bezierCurveTo(-10, 2, -14, 5, -11, 7);
-    c.bezierCurveTo(-9, 5, -7, 3, -5, 2);
-    c.closePath();
-    c.fill();
-
+    c.scale(this.size, this.size);
+    drawBird(c, this.phase, this.size);
     c.restore();
   };
 
-  /* ── Flock ────────────────────────────────────────── */
-  const flock = Array.from({ length: 8 }, function () { return new Bird(); });
+  var flock = Array.from({ length: 8 }, function () { return new Bird(); });
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);

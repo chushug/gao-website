@@ -171,7 +171,7 @@ body {
 /* ── Sidebar footer ──────────────────────────────── */
 .sidebar-footer { margin-top: auto; padding-top: 1rem; }
 
-.sidebar-footer p { color: #9e8eaa; font-size: 0.72rem; margin: 0; }
+.sidebar-footer p { color: #c8b8d8; font-size: 0.72rem; margin: 0; }
 
 /* ── Main content — centered in remaining space ─── */
 #quarto-content {
@@ -228,6 +228,24 @@ h3 {
 /* ── Links ───────────────────────────────────────── */
 a { color: var(--c-green); text-decoration: none; }
 a:hover { color: var(--c-teal); text-decoration: underline; }
+
+/* ── Hero image ──────────────────────────────────── */
+.hero-wrap {
+  width: calc(100% + 6.5rem);
+  margin-left: -3.25rem;
+  margin-top: -3rem;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  border-radius: 0 0 6px 6px;
+}
+
+.hero-wrap img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  object-position: center 55%;
+  display: block;
+}
 
 /* ── News section ────────────────────────────────── */
 .news-item {

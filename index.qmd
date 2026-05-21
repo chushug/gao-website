@@ -2,6 +2,10 @@
 title: "Home"
 ---
 
+<div class="hero-wrap">
+  <img src="images/hero.jpg" alt="Canada geese on campus">
+</div>
+
 ## About
 
 I am a PhD student in the Department of Biology at **Saint Louis University**, advised by [Dr. Laibin Huang](https://huanglabslu.com). My research focuses on nitrogen cycling in long-term agricultural ecosystems — specifically, how a century of differential crop rotation and fertilization has shaped soil microbial communities and nitrification-related processes in the **Morrow Plots**, the oldest continuously cultivated experimental field in the Americas.
