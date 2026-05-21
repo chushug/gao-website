@@ -15,3 +15,4 @@ format:
     page-layout: full
     include-in-header: _head.html
     include-before-body: _sidebar.html
+    html-math-method: mathjax

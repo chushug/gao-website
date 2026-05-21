@@ -149,6 +149,17 @@ body {
   padding-left: 0.4rem;
 }
 
+.sidebar-nav ul li a.nav-subtle {
+  color: #7a6a88;
+  font-size: 0.86rem;
+  font-style: italic;
+}
+
+.sidebar-nav ul li a.nav-subtle:hover {
+  color: #a896b8;
+  padding-left: 0.4rem;
+}
+
 /* ── Social icons ────────────────────────────────── */
 .social-icons {
   display: flex;

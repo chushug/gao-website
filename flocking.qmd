@@ -1,0 +1,221 @@
+---
+title: "Flocking"
+---
+
+The animated simulation visible on the [Home](index.html) page models the emergent collective motion of bird flocks using the *boids* algorithm, a computational framework first described by Craig W. Reynolds in 1987. This page documents the theoretical foundations, mathematical formulation, and implementation details of that simulation.
+
+---
+
+## Background
+
+Reynolds, C. W. (1987). Flocks, herds and schools: A distributed behavioral model. *ACM SIGGRAPH Computer Graphics*, **21**(4), 25–34.
+
+Reynolds observed that the coordinated movement of animal aggregations — bird flocks, fish schools, ungulate herds — could not be explained by a centralized controller or a leader-follower hierarchy. Instead, such patterns emerge from purely *local* interactions: each individual responds only to its immediate neighbors, yet coherent global structure arises spontaneously. He proposed three steering behaviors, each operating within a perception radius $r$, that together reproduce the qualitative dynamics of natural flocks.
+
+---
+
+## Behavioral Rules
+
+Each agent (boid) $i$ carries a position $\mathbf{p}_i \in \mathbb{R}^2$ and a velocity $\mathbf{v}_i \in \mathbb{R}^2$. At each discrete timestep the agent perceives its neighborhood
+
+$$N_k(i) \;=\; \bigl\{\, j \neq i \;:\; \|\mathbf{p}_i - \mathbf{p}_j\| < r_k \,\bigr\}$$
+
+and computes three local forces.
+
+### Separation
+
+Boids steer to avoid collisions with neighbors that fall within a short-range radius $r_s$. The repulsive contribution of each neighbor is weighted by the inverse square of the distance, so that very close neighbors exert disproportionately strong avoidance pressure:
+
+$$\mathbf{f}^{\,sep}_i \;=\; \frac{1}{\lvert N_s(i)\rvert} \sum_{j \,\in\, N_s(i)} \frac{\mathbf{p}_i - \mathbf{p}_j}{\|\mathbf{p}_i - \mathbf{p}_j\|^2}$$
+
+### Alignment
+
+Boids steer toward the mean heading of neighbors within radius $r_a$, encouraging local velocity consensus:
+
+$$\mathbf{f}^{\,ali}_i \;=\; \frac{1}{\lvert N_a(i)\rvert} \sum_{j \,\in\, N_a(i)} \mathbf{v}_j$$
+
+### Cohesion
+
+Boids steer toward the centroid of neighbors within radius $r_c$, producing the attractive force that holds the flock together:
+
+$$\mathbf{f}^{\,coh}_i \;=\; \frac{1}{\lvert N_c(i)\rvert} \sum_{j \,\in\, N_c(i)} \mathbf{p}_j \;-\; \mathbf{p}_i$$
+
+---
+
+## Steering and Integration
+
+Each raw force $\mathbf{f}$ is converted into a *steering* force by projecting it onto the desired velocity and subtracting the current velocity, then clamping to a maximum force magnitude $f_{max}$:
+
+$$\mathbf{s}(\mathbf{f}) \;=\; \operatorname{clip}\!\left(\hat{\mathbf{f}}\, v_{max} - \mathbf{v}_i,\; f_{max}\right)$$
+
+where $\hat{\mathbf{f}} = \mathbf{f}/\|\mathbf{f}\|$ is the unit desired direction and $v_{max}$ is the maximum speed. The total acceleration is a weighted sum of the three steered forces:
+
+$$\mathbf{a}_i \;=\; w_s\,\mathbf{s}\!\left(\mathbf{f}^{sep}_i\right) \;+\; w_a\,\mathbf{s}\!\left(\mathbf{f}^{ali}_i\right) \;+\; w_c\,\mathbf{s}\!\left(\mathbf{f}^{coh}_i\right)$$
+
+State is updated with a first-order Euler step:
+
+$$\mathbf{v}_i \;\leftarrow\; \operatorname{clip}\!\left(\mathbf{v}_i + \mathbf{a}_i,\; v_{max}\right), \qquad \mathbf{p}_i \;\leftarrow\; \mathbf{p}_i + \mathbf{v}_i$$
+
+The domain is toroidal: agents that exit one edge re-enter from the opposite side.
+
+---
+
+## Simulation Parameters
+
+| Parameter | Symbol | Value |
+|-----------|--------|-------|
+| Number of boids | $N$ | 45 |
+| Maximum speed | $v_{max}$ | 2.0 px/frame |
+| Maximum steering force | $f_{max}$ | 0.032 |
+| Separation radius | $r_s$ | 30 px |
+| Alignment radius | $r_a$ | 65 px |
+| Cohesion radius | $r_c$ | 80 px |
+| Separation weight | $w_s$ | 1.7 |
+| Alignment weight | $w_a$ | 1.1 |
+| Cohesion weight | $w_c$ | 1.0 |
+
+The ghost trail is produced by saving a complete positional snapshot of the flock every 6 frames and retaining the most recent 5 snapshots. Each snapshot is rendered at progressively lower opacity ($\alpha \propto t^2$, where $t \in (0,1]$ indexes recency), giving a sparse afterimage effect rather than a dense trajectory.
+
+---
+
+## Implementation
+
+The following self-contained JavaScript produces the simulation. It requires only a browser canvas element; no external libraries are needed.
+
+```javascript
+(function () {
+  // Attach canvas behind all page content
+  var canvas = document.createElement('canvas');
+  canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;' +
+                         'z-index:0;pointer-events:none;';
+  document.body.insertBefore(canvas, document.body.firstChild);
+  var ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  /* ── 2-D vector ──────────────────────────────── */
+  function Vec(x, y) { this.x = x; this.y = y; }
+  Vec.prototype.add   = function(v){ return new Vec(this.x+v.x, this.y+v.y); };
+  Vec.prototype.sub   = function(v){ return new Vec(this.x-v.x, this.y-v.y); };
+  Vec.prototype.mul   = function(s){ return new Vec(this.x*s,   this.y*s);   };
+  Vec.prototype.mag   = function() { return Math.sqrt(this.x*this.x+this.y*this.y)||0.001; };
+  Vec.prototype.norm  = function() { var m=this.mag(); return new Vec(this.x/m,this.y/m); };
+  Vec.prototype.limit = function(max){
+    return this.mag() > max ? this.norm().mul(max) : this;
+  };
+
+  /* ── Parameters ──────────────────────────────── */
+  var N=45, MAX_SPD=2.0, MAX_F=0.032;
+  var R_SEP=30, R_ALI=65, R_COH=80;
+  var W_SEP=1.7, W_ALI=1.1, W_COH=1.0;
+
+  /* ── Boid ────────────────────────────────────── */
+  function Boid() {
+    var W=canvas.width, H=canvas.height;
+    this.pos = new Vec(W*0.3+Math.random()*W*0.4, H*0.2+Math.random()*H*0.6);
+    var a = Math.random()*Math.PI*2;
+    this.vel = new Vec(Math.cos(a)*MAX_SPD, Math.sin(a)*MAX_SPD);
+    this.acc = new Vec(0,0);
+  }
+
+  Boid.prototype._steer = function(target) {
+    return target.norm().mul(MAX_SPD).sub(this.vel).limit(MAX_F);
+  };
+
+  Boid.prototype.flock = function(boids) {
+    var sep=new Vec(0,0), ali=new Vec(0,0), coh=new Vec(0,0);
+    var sc=0, ac=0, cc=0;
+    for (var i=0; i<boids.length; i++) {
+      if (boids[i]===this) continue;
+      var d = this.pos.sub(boids[i].pos).mag();
+      if (d < R_SEP){ sep=sep.add(this.pos.sub(boids[i].pos).norm().mul(1/d)); sc++; }
+      if (d < R_ALI){ ali=ali.add(boids[i].vel); ac++; }
+      if (d < R_COH){ coh=coh.add(boids[i].pos); cc++; }
+    }
+    var f = new Vec(0,0);
+    if (sc) f=f.add(this._steer(sep.mul(1/sc)).mul(W_SEP));
+    if (ac) f=f.add(this._steer(ali.mul(1/ac)).mul(W_ALI));
+    if (cc) f=f.add(this._steer(coh.mul(1/cc).sub(this.pos)).mul(W_COH));
+    this.acc = f;
+  };
+
+  Boid.prototype.update = function(boids) {
+    this.flock(boids);
+    this.vel = this.vel.add(this.acc).limit(MAX_SPD);
+    this.pos = this.pos.add(this.vel);
+    this.acc = new Vec(0,0);
+    // Toroidal wrapping
+    var W=canvas.width, H=canvas.height;
+    if (this.pos.x < -20)  this.pos.x = W+20;
+    if (this.pos.x > W+20) this.pos.x = -20;
+    if (this.pos.y < -20)  this.pos.y = H+20;
+    if (this.pos.y > H+20) this.pos.y = -20;
+  };
+
+  /* ── Rendering ───────────────────────────────── */
+  function drawArrow(x, y, angle, alpha, sz) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(angle);
+    ctx.strokeStyle = 'rgba(75,65,88,'+alpha.toFixed(3)+')';
+    ctx.lineWidth = 1.1;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo( sz, 0);
+    ctx.lineTo(-sz*0.7, -sz*0.55);
+    ctx.moveTo( sz, 0);
+    ctx.lineTo(-sz*0.7,  sz*0.55);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  var SNAP_INTERVAL=6, SNAP_COUNT=5, snapshots=[], frame=0;
+  var flock = Array.from({length:N}, function(){ return new Boid(); });
+
+  function animate() {
+    frame++;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (var i=0; i<flock.length; i++) flock[i].update(flock);
+
+    // Save periodic snapshot for ghost trail
+    if (frame % SNAP_INTERVAL === 0) {
+      snapshots.push(flock.map(function(b){
+        return { x:b.pos.x, y:b.pos.y, a:Math.atan2(b.vel.y,b.vel.x) };
+      }));
+      if (snapshots.length > SNAP_COUNT) snapshots.shift();
+    }
+
+    // Render ghost snapshots (quadratic opacity falloff)
+    for (var s=0; s<snapshots.length; s++) {
+      var t = (s+1)/(snapshots.length+1);
+      var alpha = t*t*0.18;
+      for (var j=0; j<snapshots[s].length; j++) {
+        var g = snapshots[s][j];
+        drawArrow(g.x, g.y, g.a, alpha, 4.5+t*1.5);
+      }
+    }
+
+    // Render current boids
+    for (var i=0; i<flock.length; i++) {
+      var b = flock[i];
+      drawArrow(b.pos.x, b.pos.y, Math.atan2(b.vel.y,b.vel.x), 0.55, 6);
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+})();
+```
+
+---
+
+## Reference
+
+Reynolds, C. W. (1987). Flocks, herds and schools: A distributed behavioral model. *ACM SIGGRAPH Computer Graphics*, **21**(4), 25–34. <https://doi.org/10.1145/37402.37406>
