@@ -21,7 +21,7 @@
   Vec.prototype.limit = function(max) { return this.mag()>max ? this.norm().mul(max) : this; };
 
   /* ── Boid ─────────────────────────────────────── */
-  var N         = 45;
+  var N         = 30;
   var MAX_SPD   = 2.0;
   var MAX_F     = 0.032;
   var R_SEP     = 30;
@@ -94,8 +94,8 @@
   }
 
   /* ── Snapshot-based ghost trail ───────────────── */
-  var SNAP_INTERVAL = 6;   // save snapshot every N frames
-  var SNAP_COUNT    = 5;   // how many ghosts to keep
+  var SNAP_INTERVAL = 10;  // save snapshot every N frames
+  var SNAP_COUNT    = 8;   // how many ghosts to keep
   var snapshots     = [];
   var frame         = 0;
 

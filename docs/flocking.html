@@ -282,7 +282,7 @@ window.Quarto = {
 <tr class="odd">
 <td>Number of boids</td>
 <td><span class="math inline">\(N\)</span></td>
-<td>45</td>
+<td>30</td>
 </tr>
 <tr class="even">
 <td>Maximum speed</td>
@@ -326,7 +326,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>The ghost trail is produced by saving a complete positional snapshot of the flock every 6 frames and retaining the most recent 5 snapshots. Each snapshot is rendered at progressively lower opacity (<span class="math inline">\(\alpha \propto t^2\)</span>, where <span class="math inline">\(t \in (0,1]\)</span> indexes recency), giving a sparse afterimage effect rather than a dense trajectory.</p>
+<p>The ghost trail is produced by saving a complete positional snapshot of the flock every 10 frames and retaining the most recent 8 snapshots. Each snapshot is rendered at progressively lower opacity (<span class="math inline">\(\alpha \propto t^2\)</span>, where <span class="math inline">\(t \in (0,1]\)</span> indexes recency), giving a sparse afterimage effect rather than a dense trajectory.</p>
 </section>
 <section id="implementation" class="level2">
 <h2 class="anchored" data-anchor-id="implementation">Implementation</h2>
@@ -358,7 +358,7 @@ window.Quarto = {
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* ── Parameters ──────────────────────────────── */</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> N<span class="op">=</span><span class="dv">45</span><span class="op">,</span> MAX_SPD<span class="op">=</span><span class="fl">2.0</span><span class="op">,</span> MAX_F<span class="op">=</span><span class="fl">0.032</span><span class="op">;</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> N<span class="op">=</span><span class="dv">30</span><span class="op">,</span> MAX_SPD<span class="op">=</span><span class="fl">2.0</span><span class="op">,</span> MAX_F<span class="op">=</span><span class="fl">0.032</span><span class="op">;</span></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> R_SEP<span class="op">=</span><span class="dv">30</span><span class="op">,</span> R_ALI<span class="op">=</span><span class="dv">65</span><span class="op">,</span> R_COH<span class="op">=</span><span class="dv">80</span><span class="op">;</span></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> W_SEP<span class="op">=</span><span class="fl">1.7</span><span class="op">,</span> W_ALI<span class="op">=</span><span class="fl">1.1</span><span class="op">,</span> W_COH<span class="op">=</span><span class="fl">1.0</span><span class="op">;</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
@@ -422,7 +422,7 @@ window.Quarto = {
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    ctx<span class="op">.</span><span class="fu">restore</span>()<span class="op">;</span></span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> SNAP_INTERVAL<span class="op">=</span><span class="dv">6</span><span class="op">,</span> SNAP_COUNT<span class="op">=</span><span class="dv">5</span><span class="op">,</span> snapshots<span class="op">=</span>[]<span class="op">,</span> frame<span class="op">=</span><span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> SNAP_INTERVAL<span class="op">=</span><span class="dv">10</span><span class="op">,</span> SNAP_COUNT<span class="op">=</span><span class="dv">8</span><span class="op">,</span> snapshots<span class="op">=</span>[]<span class="op">,</span> frame<span class="op">=</span><span class="dv">0</span><span class="op">;</span></span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> flock <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({<span class="dt">length</span><span class="op">:</span>N}<span class="op">,</span> <span class="kw">function</span>(){ <span class="cf">return</span> <span class="kw">new</span> <span class="fu">Boid</span>()<span class="op">;</span> })<span class="op">;</span></span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>  <span class="kw">function</span> <span class="fu">animate</span>() {</span>
