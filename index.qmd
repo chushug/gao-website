@@ -8,7 +8,7 @@ title: "Home"
 
 ## About
 
-I am a PhD student in the Department of Biology at **Saint Louis University**, advised by [Dr. Laibin Huang](https://huanglabslu.com). My research focuses on nitrogen cycling in long-term agricultural ecosystems — specifically, how a century of differential crop rotation and fertilization has shaped soil microbial communities and nitrification-related processes in the **Morrow Plots**, the oldest continuously cultivated experimental field in the Americas.
+I am a PhD student in the Department of Biology at **Saint Louis University**, advised by [Dr. Laibin Huang](https://seahuanglaibin.wixsite.com/sluhuang). My research focuses on nitrogen cycling in long-term agricultural ecosystems — specifically, how a century of differential crop rotation and fertilization has shaped soil microbial communities and nitrification-related processes in the [**Morrow Plots**](https://morrow.aces.illinois.edu/), the second-oldest continuously cultivated experimental field in the world.
 
 I work with metagenomics, metatranscriptomics, and 16S/nifH amplicon sequencing to characterize the functional potential and transcriptional activity of soil microbiomes. Before coming to SLU, I completed a bachelor's degree in Ecology at **Guangxi University** (China), where I studied diazotrophic communities in double-rice paddies.
 
@@ -48,5 +48,5 @@ Started PhD program in Biology at **Saint Louis University**.
 ::: news-date
 May 2025
 :::
-Graduated with a BSc in Ecology from **Guangxi University** (GPA rank: top 3%).
+Graduated with a BSc in Ecology from **Guangxi University**.
 :::
