@@ -88,7 +88,7 @@ The domain is toroidal: agents that exit one edge re-enter from the opposite sid
 
 | Parameter | Symbol | Value |
 |-----------|--------|-------|
-| Number of boids | $N$ | 45 |
+| Number of boids | $N$ | 30 |
 | Maximum speed | $v_{max}$ | 2.0 px/frame |
 | Maximum steering force | $f_{max}$ | 0.032 |
 | Separation radius | $r_s$ | 30 px |
@@ -98,7 +98,7 @@ The domain is toroidal: agents that exit one edge re-enter from the opposite sid
 | Alignment weight | $w_a$ | 1.1 |
 | Cohesion weight | $w_c$ | 1.0 |
 
-The ghost trail is produced by saving a complete positional snapshot of the flock every 6 frames and retaining the most recent 5 snapshots. Each snapshot is rendered at progressively lower opacity ($\alpha \propto t^2$, where $t \in (0,1]$ indexes recency), giving a sparse afterimage effect rather than a dense trajectory.
+The ghost trail is produced by saving a complete positional snapshot of the flock every 10 frames and retaining the most recent 8 snapshots. Each snapshot is rendered at progressively lower opacity ($\alpha \propto t^2$, where $t \in (0,1]$ indexes recency), giving a sparse afterimage effect rather than a dense trajectory.
 
 ## Implementation
 
@@ -132,7 +132,7 @@ The following self-contained JavaScript produces the simulation. It requires onl
   };
 
   /* ── Parameters ──────────────────────────────── */
-  var N=45, MAX_SPD=2.0, MAX_F=0.032;
+  var N=30, MAX_SPD=2.0, MAX_F=0.032;
   var R_SEP=30, R_ALI=65, R_COH=80;
   var W_SEP=1.7, W_ALI=1.1, W_COH=1.0;
 
@@ -196,7 +196,7 @@ The following self-contained JavaScript produces the simulation. It requires onl
     ctx.restore();
   }
 
-  var SNAP_INTERVAL=6, SNAP_COUNT=5, snapshots=[], frame=0;
+  var SNAP_INTERVAL=10, SNAP_COUNT=8, snapshots=[], frame=0;
   var flock = Array.from({length:N}, function(){ return new Boid(); });
 
   function animate() {
