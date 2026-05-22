@@ -4,8 +4,6 @@ title: "CV"
 
 [<i class="fa-solid fa-file-pdf"></i> Download PDF](pdf/Maxon_Gao_CV.pdf){.btn-cv target="_blank"}
 
----
-
 ## Education
 
 ::: cv-entry
@@ -20,13 +18,9 @@ GPA: 3.57/4.00
 :::
 GPA: 3.47/5 · Rank: top 3%
 
----
-
 ## Publications
 
 See [Publications](publications.html).
-
----
 
 ## Research Experience
 
@@ -66,8 +60,6 @@ Surveyed 40 grid cells (10×10 km) in Yiling District using direct count, thermo
 :::
 Twice-monthly surveys at four sites; recorded >120 species; organized public science events for 40+ attendees.
 
----
-
 ## Teaching Experience
 
 ::: cv-entry
@@ -79,8 +71,6 @@ Twice-monthly surveys at four sites; recorded >120 species; organized public sci
 **Teaching Assistant**, BIOL 1245, Saint Louis University
 [Aug – Dec 2025]{.cv-date}
 :::
-
----
 
 ## Awards
 
@@ -103,8 +93,6 @@ Excellent Student Cadre (×2); Merit Student (×2); Excellent Staff (×2) · *Sc
 Stora Enso Scholarship
 [2022]{.cv-date}
 :::
-
----
 
 ## Internship
 

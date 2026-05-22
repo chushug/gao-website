@@ -120,6 +120,26 @@ Pull with rebase before pushing if the Actions bot has committed since your last
 git pull --rebase && git push
 ```
 
+## Section Separators
+
+Do not use `---` horizontal rules between sections. The `h2` heading style already includes a `border-bottom`, so a preceding `---` is visually redundant. The only `---` that should appear in a `.qmd` file is the YAML front-matter delimiter at the very top of the file.
+
+## Citations on Academic Pages
+
+For pages with references (e.g., `flocking.qmd`), use anchor-based in-text citations that jump to a consolidated `## References` section at the bottom of the page.
+
+**In-text**: link the author-year string to the anchor.
+```markdown
+[Reynolds (1987)](#reynolds-1987) observed that...
+```
+
+**Reference entry**: prefix each entry with a named HTML anchor.
+```html
+<a id="reynolds-1987"></a>Reynolds, C. W. (1987). Flocks, herds and schools...
+```
+
+Anchor IDs follow the pattern `lastname-year` (lowercase, hyphen-separated). All references go in the `## References` section at the end — never inline after subsections.
+
 ## Do Not
 
 - Do not edit files inside `docs/` — they are overwritten by CI.
@@ -127,3 +147,4 @@ git pull --rebase && git push
 - Do not add `Co-Authored-By: Claude` to commit messages.
 - Do not hardcode colors — use CSS variables.
 - Do not add a second boids canvas to non-home pages; the path guard in `birds.js` is intentional.
+- Do not insert `---` section separators between content sections.

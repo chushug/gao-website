@@ -4,8 +4,6 @@ title: "Research"
 
 My work sits at the intersection of soil microbial ecology, biogeochemical cycling, and long-term agricultural management. I use sequencing-based approaches and wet-lab methods to understand how microbial communities drive nitrogen transformations in soil.
 
----
-
 <div class="research-grid">
 
   <div class="research-card">
@@ -33,8 +31,6 @@ My work sits at the intersection of soil microbial ecology, biogeochemical cycli
   </div>
 
 </div>
-
----
 
 ## Methods I Use
 
