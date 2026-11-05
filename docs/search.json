@@ -1,38 +1,24 @@
 [
   {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "PhD Student · BiologySaint Louis University\n  \n    \n      Home\n      Research\n      Publications\n      Teaching\n      CV\n      Flocking\n    \n  \n  \n    \n    \n    \n    \n  \n  \n    © 2026 Chushu Gao\nMy work sits at the intersection of soil microbial ecology, biogeochemical cycling, and long-term agricultural management. I use sequencing-based approaches and wet-lab methods to understand how microbial communities drive nitrogen transformations in soil."
-  },
-  {
-    "objectID": "research.html#methods-i-use",
-    "href": "research.html#methods-i-use",
-    "title": "Research",
-    "section": "Methods I Use",
-    "text": "Methods I Use\nMolecular: DNA/RNA extraction, 16S & nifH amplicon sequencing, metagenomics, metatranscriptomics, qPCR, functional gene cloning\nStatistical: R (vegan, phyloseq, ALDEx2), PCoA, NMDS, RDA, PERMANOVA, differential abundance analysis\nField: Soil sampling, gas flux measurement, camera trap deployment, point count bird surveys, acoustic recording"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
     "section": "",
     "text": "PhD Student · BiologySaint Louis University\n  \n    \n      Home\n      Research\n      Publications\n      Teaching\n      CV\n      Flocking\n    \n  \n  \n    \n    \n    \n    \n  \n  \n    © 2026 Chushu Gao"
   },
   {
-    "objectID": "index.html#about",
-    "href": "index.html#about",
-    "title": "Home",
-    "section": "About",
-    "text": "About\nI am a PhD student in the Department of Biology at Saint Louis University, advised by Dr. Laibin Huang. My research focuses on nitrogen cycling in long-term agricultural ecosystems — specifically, how a century of differential crop rotation and fertilization has shaped soil microbial communities and nitrification-related processes in the Morrow Plots, the second-oldest continuously cultivated experimental field in the world.\nI work with metagenomics, metatranscriptomics, and 16S/nifH amplicon sequencing to characterize the functional potential and transcriptional activity of soil microbiomes. Before coming to SLU, I completed a bachelor’s degree in Ecology at Guangxi University (China), where I studied diazotrophic communities in double-rice paddies.\nOutside the lab, I am an enthusiastic birder and have contributed to camera trap monitoring in mangrove reserves and avian biodiversity baseline surveys in southern China."
+    "objectID": "teaching.html#saint-louis-university",
+    "href": "teaching.html#saint-louis-university",
+    "title": "Teaching",
+    "section": "Saint Louis University",
+    "text": "Saint Louis University\n\nBIOL 1265 — Principles of Biology: Evolution, Ecology, and Diversity Lab\nTeaching Assistant · January – May 2026\nLed two lab sections (~25 students each). Supported instruction in evolution, ecology, and community biology, with emphasis on scientific instruments, hypothesis-driven investigation, and student practice in analyzing and presenting data.\n\n\nBIOL 1245 — Principles of Biology: Molecules, Cells, and Genes Lab\nTeaching Assistant · August – December 2025\nLed two lab sections (~25 students each). Supported laboratory instruction in molecular and cellular biology, genetics, and animal physiology — including hypothesis testing, data collection and analysis, visual data presentation, and written and oral scientific communication."
   },
   {
-    "objectID": "index.html#news",
-    "href": "index.html#news",
-    "title": "Home",
-    "section": "News",
-    "text": "News\n\n\nMay 2026\n\nNew preprint posted: First Metagenome-Assembled Genomes from the Historic Morrow Plots Reveal Management-Associated Dominance of Archaeal Ammonia Oxidizers. bioRxiv 2026.03.24.714042\n\n\n\nApril 2026\n\nServed as a judge at the Biology Undergraduate Research Symposium at Saint Louis University, evaluating biology and neuroscience posters.\n\n\n\nJanuary 2026\n\nServed as a judge at the Adams Elementary STEAM Fair. Started TA appointment for BIOL 1265 (Evolution, Ecology, and Diversity).\n\n\n\nAugust 2025\n\nStarted PhD program in Biology at Saint Louis University.\n\n\n\nMay 2025\n\nGraduated with a BSc in Ecology from Guangxi University."
+    "objectID": "teaching.html#academic-service",
+    "href": "teaching.html#academic-service",
+    "title": "Teaching",
+    "section": "Academic Service",
+    "text": "Academic Service\nJudge, Biology Undergraduate Research Symposium, Saint Louis University · April 2026 Evaluated undergraduate biology and neuroscience posters for clarity, scientific rigor, and effectiveness of communication.\nJudge, Adams Elementary STEAM Fair · January 2026 Scored student projects with a standardized rubric and offered feedback on creativity, scientific thinking, and presentation."
   },
   {
     "objectID": "cv.html",
@@ -54,6 +40,13 @@
     "title": "CV",
     "section": "Publications",
     "text": "Publications\nSee Publications."
+  },
+  {
+    "objectID": "cv.html#conference-presentations",
+    "href": "cv.html#conference-presentations",
+    "title": "CV",
+    "section": "Conference Presentations",
+    "text": "Conference Presentations\n\nHuang, L., Gao, C., & Margenot, A. J. Coexistence of Nitrifiers Is Affected by Both Fertilization and Crop Rotation [Oral Presentation]. CANVAS 2026, ASA-CSSA-SSSA. Nov. 4, 2026\n\n\nGao, C., Margenot, A. J., & Huang, L. Crop Rotation and Fertilization Structure Soil Chemistry and Multi-Kingdom Microbial Communities in the Morrow Plots [Poster Presentation]. CANVAS 2026, ASA-CSSA-SSSA. Nov. 3, 2026"
   },
   {
     "objectID": "cv.html#research-experience",
@@ -84,11 +77,18 @@
     "text": "Internship\n\nYiling District Branch, Yichang Ecological Environment Bureau Aug 2023\n\nNatural resource survey of Quanyi River National Wetland Park; pollution inspections; drone survey of national control river sections; water sample collection and chemical analysis."
   },
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
     "section": "",
-    "text": "Chushu(Maxon) Gao\n  PhD Student · BiologySaint Louis University\n  \n    \n      Home\n      Research\n      Publications\n      Teaching\n      CV\n      Flocking\n    \n  \n  \n    \n    \n    \n    \n  \n  \n    © 2026 Chushu Gao\n  \n\n\n\n\n\n\n2026\n\n\nFirst Metagenome-Assembled Genomes from the Historic Morrow Plots Reveal Management-Associated Dominance of Archaeal Ammonia Oxidizers\n\n\nViet D. Nguyen, Chushu Gao, Cory Gardner, Zhine Wang, Andrew J. Margenot, Laibin Huang, TaeHyuk Ahn\n\n\nScientific Data · under review\n\n bioRxiv  DOI"
+    "text": "PhD Student · BiologySaint Louis University\n  \n    \n      Home\n      Research\n      Publications\n      Teaching\n      CV\n      Flocking\n    \n  \n  \n    \n    \n    \n    \n  \n  \n    © 2026 Chushu Gao\nMy work sits at the intersection of soil microbial ecology, biogeochemical cycling, and long-term agricultural management. I study how agricultural practices shape soil communities and nitrogen cycling through molecular microbiology, bioinformatics, and statistical analysis."
+  },
+  {
+    "objectID": "research.html#research-skills",
+    "href": "research.html#research-skills",
+    "title": "Research",
+    "section": "Research Skills",
+    "text": "Research Skills\nMolecular and Genomic Approaches: DNA/RNA extraction, qPCR, amplicon sequencing, metagenomics, and metatranscriptomics\nComputational and Statistical Analysis: R-based microbial community analysis, multivariate statistics, differential abundance testing, and data visualization\nField and Ecological Research: Soil sampling, soil-property assessment, gas-flux measurement, camera-trap deployment, and bird surveys"
   },
   {
     "objectID": "flocking.html",
@@ -147,24 +147,31 @@
     "text": "References\nBallerini, M., Cabibbo, N., Candelier, R., Cavagna, A., Cisbani, E., Giardina, I., Lecomte, V., Orlandi, A., Parisi, G., Procaccini, A., Viale, M., & Zdravkovic, V. (2008). Interaction ruling animal collective behavior depends on topological rather than metric distance: Evidence from a field study. Proceedings of the National Academy of Sciences, 105(4), 1232–1237. https://doi.org/10.1073/pnas.0711437105\nBialek, W., Cavagna, A., Giardina, I., Mora, T., Silvestri, E., Viale, M., & Walczak, A. M. (2012). Statistical mechanics for natural flocks of birds. Proceedings of the National Academy of Sciences, 109(13), 4786–4791. https://doi.org/10.1073/pnas.1118633511\nCavagna, A., Del Castello, L., Giardina, I., Grigera, T., Jelic, A., Melillo, S., Mora, T., Parisi, L., Silvestri, E., Viale, M., & Walczak, A. M. (2014). Flocking and turning: A new model for self-organized collective motion. Journal of Statistical Physics, 158(3), 601–627. https://doi.org/10.1007/s10955-014-1119-3\nCouzin, I. D., Krause, J., James, R., Ruxton, G. D., & Franks, N. R. (2002). Collective memory and spatial sorting in animal groups. Journal of Theoretical Biology, 218(1), 1–11. https://doi.org/10.1006/jtbi.2002.3065\nCouzin, I. D., Krause, J., Franks, N. R., & Levin, S. A. (2005). Effective leadership and decision-making in animal groups on the move. Nature, 433(7025), 513–516. https://doi.org/10.1038/nature03236\nKatz, Y., Tunstrøm, K., Ioannou, C. C., Huepe, C., & Couzin, I. D. (2011). Inferring the structure and dynamics of interactions in schooling fish. Proceedings of the National Academy of Sciences, 108(46), 18720–18725. https://doi.org/10.1073/pnas.1107583108\nReynolds, C. W. (1987). Flocks, herds and schools: A distributed behavioral model. ACM SIGGRAPH Computer Graphics, 21(4), 25–34. https://doi.org/10.1145/37402.37406\nToner, J., & Tu, Y. (1995). Long-range order in a two-dimensional dynamical XY model: How birds fly together. Physical Review Letters, 75(23), 4326–4329. https://doi.org/10.1103/PhysRevLett.75.4326\nVicsek, T., Czirók, A., Ben-Jacob, E., Cohen, I., & Shochet, O. (1995). Novel type of phase transition in a system of self-driven particles. Physical Review Letters, 75(6), 1226–1229. https://doi.org/10.1103/PhysRevLett.75.1226"
   },
   {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching",
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Chushu(Maxon) Gao\n  PhD Student · BiologySaint Louis University\n  \n    \n      Home\n      Research\n      Publications\n      Teaching\n      CV\n      Flocking\n    \n  \n  \n    \n    \n    \n    \n  \n  \n    © 2026 Chushu Gao\n  \n\n\n\n\n\n\n2026\n\n\nFirst Metagenome-Assembled Genomes from the Historic Morrow Plots Reveal Management-Associated Dominance of Archaeal Ammonia Oxidizers\n\n\nViet D. Nguyen, Chushu Gao, Cory Gardner, Zhine Wang, Andrew J. Margenot, Laibin Huang, TaeHyuk Ahn\n\n\nScientific Data · under review\n\n bioRxiv  DOI"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
     "section": "",
     "text": "PhD Student · BiologySaint Louis University\n  \n    \n      Home\n      Research\n      Publications\n      Teaching\n      CV\n      Flocking\n    \n  \n  \n    \n    \n    \n    \n  \n  \n    © 2026 Chushu Gao"
   },
   {
-    "objectID": "teaching.html#saint-louis-university",
-    "href": "teaching.html#saint-louis-university",
-    "title": "Teaching",
-    "section": "Saint Louis University",
-    "text": "Saint Louis University\n\nBIOL 1265 — Principles of Biology: Evolution, Ecology, and Diversity Lab\nTeaching Assistant · January – May 2026\nLed two lab sections (~25 students each). Supported instruction in evolution, ecology, and community biology, with emphasis on scientific instruments, hypothesis-driven investigation, and student practice in analyzing and presenting data.\n\n\nBIOL 1245 — Principles of Biology: Molecules, Cells, and Genes Lab\nTeaching Assistant · August – December 2025\nLed two lab sections (~25 students each). Supported laboratory instruction in molecular and cellular biology, genetics, and animal physiology — including hypothesis testing, data collection and analysis, visual data presentation, and written and oral scientific communication."
+    "objectID": "index.html#about",
+    "href": "index.html#about",
+    "title": "Home",
+    "section": "About",
+    "text": "About\nI am a PhD student in the Department of Biology at Saint Louis University, advised by Dr. Laibin Huang. My research focuses on nitrogen cycling in long-term agricultural ecosystems — specifically, how a century of differential crop rotation and fertilization has shaped soil microbial communities and nitrification-related processes in the Morrow Plots, the second-oldest continuously cultivated experimental field in the world.\nI use molecular microbiology, high-throughput sequencing, bioinformatics, and statistical analysis to study soil microbial communities. Before coming to SLU, I completed a bachelor’s degree in Ecology at Guangxi University (China), where I studied diazotrophic communities in double-rice paddies.\nOutside the lab, I am an enthusiastic birder and have contributed to camera trap monitoring in mangrove reserves and avian biodiversity baseline surveys in southern China."
   },
   {
-    "objectID": "teaching.html#academic-service",
-    "href": "teaching.html#academic-service",
-    "title": "Teaching",
-    "section": "Academic Service",
-    "text": "Academic Service\nJudge, Biology Undergraduate Research Symposium, Saint Louis University · April 2026 Evaluated undergraduate biology and neuroscience posters for clarity, scientific rigor, and effectiveness of communication.\nJudge, Adams Elementary STEAM Fair · January 2026 Scored student projects with a standardized rubric and offered feedback on creativity, scientific thinking, and presentation."
+    "objectID": "index.html#news",
+    "href": "index.html#news",
+    "title": "Home",
+    "section": "News",
+    "text": "News\n\n\nMay 2026\n\nNew preprint posted: First Metagenome-Assembled Genomes from the Historic Morrow Plots Reveal Management-Associated Dominance of Archaeal Ammonia Oxidizers. bioRxiv 2026.03.24.714042\n\n\n\nApril 2026\n\nServed as a judge at the Biology Undergraduate Research Symposium at Saint Louis University, evaluating biology and neuroscience posters.\n\n\n\nJanuary 2026\n\nServed as a judge at the Adams Elementary STEAM Fair. Started TA appointment for BIOL 1265 (Evolution, Ecology, and Diversity).\n\n\n\nAugust 2025\n\nStarted PhD program in Biology at Saint Louis University.\n\n\n\nMay 2025\n\nGraduated with a BSc in Ecology from Guangxi University."
   }
 ]
