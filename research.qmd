@@ -2,7 +2,7 @@
 title: "Research"
 ---
 
-My work sits at the intersection of soil microbial ecology, biogeochemical cycling, and long-term agricultural management. I use sequencing-based approaches and wet-lab methods to understand how microbial communities drive nitrogen transformations in soil.
+My work sits at the intersection of soil microbial ecology, biogeochemical cycling, and long-term agricultural management. I study how agricultural practices shape soil communities and nitrogen cycling through molecular microbiology, bioinformatics, and statistical analysis.
 
 <div class="research-grid">
 
@@ -10,7 +10,15 @@ My work sits at the intersection of soil microbial ecology, biogeochemical cycli
     <img src="images/research-morrow.jpg" alt="Morrow Plots" onerror="this.style.display='none'">
     <div class="research-card-body">
       <h3>Nitrogen Cycling in the Morrow Plots</h3>
-      <p>How does more than a century of crop rotation and fertilization reshape the soil microbiomes that drive nitrification and N₂ fixation?</p>
+      <p>How do more than a century of crop rotation and fertilization shape soil chemistry, microbial communities, and nitrogen cycling?</p>
+    </div>
+  </div>
+
+  <div class="research-card">
+    <img src="images/research-amoa.jpg" alt="Agricultural soil" onerror="this.style.display='none'">
+    <div class="research-card-body">
+      <h3>Ammonia-Oxidizer Ecology</h3>
+      <p>How do long-term crop rotation and fertilization influence ammonia-oxidizing archaea, bacteria, and comammox organisms in agricultural soils?</p>
     </div>
   </div>
 
@@ -18,7 +26,7 @@ My work sits at the intersection of soil microbial ecology, biogeochemical cycli
     <img src="images/research-diazo.jpg" alt="Rice paddy" onerror="this.style.display='none'">
     <div class="research-card-body">
       <h3>Diazotrophic Community Ecology</h3>
-      <p>Straw supplementation with reduced chemical fertilizer shifts diazotrophic community structure in double-rice paddies — what soil fertility properties drive those shifts?</p>
+      <p>My previous research examined how straw return and reduced mineral fertilizer influence diazotrophic communities and soil fertility in double-rice systems.</p>
     </div>
   </div>
 
@@ -32,10 +40,10 @@ My work sits at the intersection of soil microbial ecology, biogeochemical cycli
 
 </div>
 
-## Methods I Use
+## Research Skills
 
-**Molecular:** DNA/RNA extraction, 16S & nifH amplicon sequencing, metagenomics, metatranscriptomics, qPCR, functional gene cloning
+**Molecular and Genomic Approaches:** DNA/RNA extraction, qPCR, amplicon sequencing, metagenomics, and metatranscriptomics
 
-**Statistical:** R (vegan, phyloseq, ALDEx2), PCoA, NMDS, RDA, PERMANOVA, differential abundance analysis
+**Computational and Statistical Analysis:** R-based microbial community analysis, multivariate statistics, differential abundance testing, and data visualization
 
-**Field:** Soil sampling, gas flux measurement, camera trap deployment, point count bird surveys, acoustic recording
+**Field and Ecological Research:** Soil sampling, soil-property assessment, gas-flux measurement, camera-trap deployment, and bird surveys

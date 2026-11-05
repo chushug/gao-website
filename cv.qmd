@@ -22,6 +22,18 @@ GPA: 3.47/5 · Rank: top 3%
 
 See [Publications](publications.html).
 
+## Conference Presentations
+
+::: cv-entry
+Huang, L., **Gao, C.**, & Margenot, A. J. *Coexistence of Nitrifiers Is Affected by Both Fertilization and Crop Rotation* [Oral Presentation]. CANVAS 2026, ASA-CSSA-SSSA.
+[Nov. 4, 2026]{.cv-date}
+:::
+
+::: cv-entry
+**Gao, C.**, Margenot, A. J., & Huang, L. *Crop Rotation and Fertilization Structure Soil Chemistry and Multi-Kingdom Microbial Communities in the Morrow Plots* [Poster Presentation]. CANVAS 2026, ASA-CSSA-SSSA.
+[Nov. 3, 2026]{.cv-date}
+:::
+
 ## Research Experience
 
 ::: cv-entry
